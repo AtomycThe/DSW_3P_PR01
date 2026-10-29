@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 1,
+    "Nombre": "pescado",
+    "Dificultad": "media",
+    "RecompensaXp": 2,
+    "Completada": false
+  },
+  {
+    "Id": 2,
+    "Nombre": "pescado",
+    "Dificultad": "media",
+    "RecompensaXp": 2,
+    "Completada": false
+  }
+]
