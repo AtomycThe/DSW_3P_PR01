@@ -3,6 +3,7 @@ using DSW_3P_PR01.Repositories;
 using System.Text.Json;
 using DSW_3P_PR01.Services;
 
+namespace DSW_3P_PR01.Repositories;
 public class MisionJsonRepository : IMisionRepository
 {
     private readonly string _ruta;
