@@ -1,16 +1,18 @@
 using DSW_3P_PR01.Models;
 using DSW_3P_PR01.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DSW_3P_PR01.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class MisionController : ControllerBase
+[Authorize]
+public class MisionesController : ControllerBase
 {
     private readonly IMisionService _service;
 
-    public MisionController(IMisionService service)
+    public MisionesController(IMisionService service)
     {
         _service = service;
     }
@@ -39,8 +41,7 @@ public class MisionController : ControllerBase
         try
         {
             var creado = _service.Agregar(mision);
-            return CreatedAtAction(nameof(ObtenerPorId), new { id = creado.Id }, creado);
-        }
+            return CreatedAtAction(nameof(ObtenerPorId), new { id = creado.Id }, creado); }
         catch(ArgumentException ex)
         {
             return BadRequest(new { mensaje = ex.Message });
@@ -81,15 +82,4 @@ public class MisionController : ControllerBase
             return Conflict(new { mensaje = ex.Message});
         }
     }
-
-
-
-
-
-
-
-
-
-
-
 }
